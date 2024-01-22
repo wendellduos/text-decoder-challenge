@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #679fe9;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+main {
+  display: flex;
+  align-items: center;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding: 1rem;
+}
+
+section * {
+  color: #494949;
+}
+
+textarea {
+  width: calc(100% - 2rem);
+  aspect-ratio: 4/3;
+  padding: 2rem 2rem 7rem 2rem;
+  border: none;
+  border-radius: 12px;
+  line-height: 1.5rem;
+  resize: none;
+}
+
+select {
+  position: absolute;
+  bottom: 2rem;
+  left: 3rem;
+  height: 3rem;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+  height: 3rem;
+  padding: 0 1.5rem;
+  border: 2px solid #4b85d1;
+  border-radius: 5px;
+  color: #4b85d1;
+  font-size: 1.1rem;
+  transition-property: color background-color;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4b85d1;
+  color: white;
+}
+
+footer {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer p,
+footer a {
+  color: #b4c6ee;
+}
+
+p,
+a {
+  line-height: 1.5rem;
+}
+
+a[target]::after {
+  content: "";
+  display: inline-block;
+  width: 0.6rem;
+  margin-left: 0.2rem;
+  aspect-ratio: 1/1;
+  background-image: url("./assets/outside-link-icon.svg");
+  background-size: contain;
+}
