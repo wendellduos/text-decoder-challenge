@@ -5,19 +5,23 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-  color: white;
+  color: #4e6475;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #679fe9;
+  background-color: #acd9fd;
 }
 
-header {
+header,
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+header {
   gap: 1rem;
   width: 100%;
   padding: 2rem 0;
@@ -30,52 +34,44 @@ main {
 
 section {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 50%;
   padding: 1rem;
-}
-
-section * {
-  color: #494949;
 }
 
 textarea {
   width: calc(100% - 2rem);
   aspect-ratio: 4/3;
-  padding: 2rem 2rem 7rem 2rem;
+  padding: 2rem 2rem 5rem 2rem;
   border: none;
   border-radius: 12px;
   line-height: 1.5rem;
   resize: none;
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.2);
 }
 
-select {
-  position: absolute;
-  bottom: 2rem;
-  left: 3rem;
-  height: 3rem;
-  padding: 0 1.5rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
+select,
 button {
   position: absolute;
   bottom: 2rem;
-  right: 3rem;
   height: 3rem;
   padding: 0 1.5rem;
-  border: 2px solid #4b85d1;
   border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+select {
+  left: 3rem;
+  border: none;
+  box-shadow: inset 2px 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  right: 3rem;
+  border: 2px solid #4b85d1;
   color: #4b85d1;
-  font-size: 1.1rem;
   transition-property: color background-color;
   transition: 0.3s ease-out;
-  cursor: pointer;
 }
 
 button:hover {
@@ -91,7 +87,7 @@ footer {
 
 footer p,
 footer a {
-  color: #b4c6ee;
+  color: #598caa;
 }
 
 p,
@@ -103,8 +99,8 @@ a[target]::after {
   content: "";
   display: inline-block;
   width: 0.6rem;
-  margin-left: 0.2rem;
   aspect-ratio: 1/1;
+  margin-left: 0.2rem;
   background-image: url("./assets/outside-link-icon.svg");
   background-size: contain;
 }
