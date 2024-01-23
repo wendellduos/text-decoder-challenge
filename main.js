@@ -1,3 +1,4 @@
+/* Encrypt and Decrypyt modes triggered on "convert" button click */
 document.getElementById("convert").addEventListener("click", () => {
   let mode = document.getElementById("mode").value;
   let input = document.getElementById("user-input").value;
@@ -47,5 +48,10 @@ document.getElementById("convert").addEventListener("click", () => {
       }
   }
 
-  document.getElementById("output").innerHTML = output;
+  document.getElementById("output").innerText = output;
+});
+
+/* Copy to clipboard functionality */
+document.getElementById("copy-output").addEventListener("click", () => {
+  navigator.clipboard.writeText(document.getElementById("output").value);
 });
