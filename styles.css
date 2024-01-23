@@ -1,82 +1,156 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Rubik:ital,wght@0,400;0,600;1,400&display=swap");
+
+:root {
+  --light: #a2c9ff;
+  --blue: #428dff;
+  --dim: #3e5577;
+  --dark-clear: #1a202b;
+  --dark: #14181f;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
-  color: #4e6475;
+  font-family: "Rubik", sans-serif;
+  color: var(--light);
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #acd9fd;
+  background-image: radial-gradient(
+    circle at 0 100%,
+    var(--dark-clear),
+    var(--dark) 60%
+  );
 }
 
-header,
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.awaiting {
+  font-size: 1.7rem;
+  color: inherit;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.border-rad {
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.border-rad-i {
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+p,
+a,
+label {
+  line-height: 1.5rem;
 }
 
 header {
-  gap: 1rem;
   width: 100%;
-  padding: 2rem 0;
-}
-
-main {
-  display: flex;
-  align-items: center;
+  padding: 1rem;
 }
 
 section {
   position: relative;
-  width: 50%;
   padding: 1rem;
 }
 
-textarea {
-  width: calc(100% - 2rem);
-  aspect-ratio: 4/3;
-  padding: 2rem 2rem 5rem 2rem;
-  border: none;
-  border-radius: 12px;
-  line-height: 1.5rem;
-  resize: none;
-  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.2);
+h1 {
+  font-size: 2.5rem;
+  font-family: "Abel", sans-serif;
+  text-transform: uppercase;
+  color: var(--blue);
 }
 
-select,
-button {
-  position: absolute;
-  bottom: 2rem;
-  height: 3rem;
-  padding: 0 1.5rem;
+select {
+  padding: 0.1rem 0.2rem;
+  border: solid 2px var(--dim);
   border-radius: 5px;
+  background-color: var(--dark-clear);
   font-size: 1rem;
   cursor: pointer;
 }
 
-select {
-  left: 3rem;
+textarea {
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid var(--blue);
+  resize: none;
+}
+
+textarea:focus {
+  outline: 2px solid var(--light);
+}
+
+#user-input {
+  background-color: transparent;
+}
+
+#convert {
+  width: calc(100% - 2rem);
+  height: 3rem;
+  margin-left: 1rem;
+  padding: 0 2rem;
   border: none;
-  box-shadow: inset 2px 3px 4px rgba(0, 0, 0, 0.1);
-}
-
-button {
-  right: 3rem;
-  border: 2px solid #4b85d1;
-  color: #4b85d1;
-  transition-property: color background-color;
-  transition: 0.3s ease-out;
-}
-
-button:hover {
-  background-color: #4b85d1;
+  background-color: var(--blue);
   color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#result-wrp {
+  position: relative;
+}
+
+#output {
+  background-color: var(--dark-clear);
+}
+
+#copy-output {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--light);
+  cursor: pointer;
+}
+
+#copy-output:hover {
+  background-color: var(--dim);
+}
+
+#copy-icon {
+  fill: var(--light);
 }
 
 footer {
@@ -87,12 +161,7 @@ footer {
 
 footer p,
 footer a {
-  color: #598caa;
-}
-
-p,
-a {
-  line-height: 1.5rem;
+  color: var(--dim);
 }
 
 a[target]::after {
