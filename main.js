@@ -5,7 +5,22 @@ document.getElementById("convert").addEventListener("click", () => {
 
   switch (mode) {
     case "decrypt":
-      // por fazer
+      let n = 0;
+
+      while (n < input.length) {
+        output += input[n];
+
+        if (input[n] === "i" || input[n] === "o" || input[n] === "u") {
+          n += 4;
+        } else if (input[n] === "e") {
+          n += 5;
+        } else if (input[n] === "a") {
+          n += 2;
+        } else {
+          n++;
+        }
+      }
+
       break;
 
     default:
@@ -32,5 +47,5 @@ document.getElementById("convert").addEventListener("click", () => {
       }
   }
 
-  document.getElementById("output").innerText = output;
+  document.getElementById("output").innerHTML = output;
 });
