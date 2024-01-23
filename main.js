@@ -51,6 +51,11 @@ document.getElementById("convert").addEventListener("click", () => {
   document.getElementById("output").innerText = output;
 });
 
+/* Clear input field functionality */
+document.getElementById("clear-input").addEventListener("click", () => {
+  document.getElementById("user-input").value = "";
+});
+
 /* Copy to clipboard functionality */
 document.getElementById("copy-output").addEventListener("click", () => {
   navigator.clipboard.writeText(document.getElementById("output").value);

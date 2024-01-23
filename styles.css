@@ -103,6 +103,11 @@ select {
   cursor: pointer;
 }
 
+#result-wrp,
+#input-wrp {
+  position: relative;
+}
+
 textarea {
   width: calc(100% - 2rem);
   margin: 1rem;
@@ -119,6 +124,10 @@ textarea:focus {
   background-color: transparent;
 }
 
+#clear-input {
+  bottom: 5rem;
+}
+
 #convert {
   width: calc(100% - 2rem);
   height: 3rem;
@@ -131,17 +140,13 @@ textarea:focus {
   cursor: pointer;
 }
 
-#result-wrp {
-  position: relative;
-}
-
 #output {
   background-color: var(--dark-clear);
 }
 
-#copy-output {
+#copy-output,
+#clear-input {
   position: absolute;
-  top: 2rem;
   right: 2rem;
   display: flex;
   align-items: center;
@@ -154,11 +159,17 @@ textarea:focus {
   cursor: pointer;
 }
 
-#copy-output:hover {
+#copy-output {
+  bottom: 2rem;
+}
+
+#copy-output:hover,
+#clear-input:hover {
   background-color: var(--dim);
 }
 
-#copy-icon {
+#copy-icon,
+#eraser-icon {
   fill: var(--light);
 }
 
